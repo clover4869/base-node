@@ -1,0 +1,3 @@
+enum UserRouter {
+    get = '/users'
+}
