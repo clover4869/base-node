@@ -1,5 +1,14 @@
 import * as express from 'express';
 import UserRouter from './modules/user/user.router.';
+import { PostgresDataSource } from './database/data-source';
+
+PostgresDataSource.initialize()
+  .then(() => {
+    console.log('Data Source has been initialized!');
+  })
+  .catch((err) => {
+    console.error('Error during Data Source initialization:', err);
+  });
 
 const app = express();
 

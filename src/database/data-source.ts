@@ -8,10 +8,12 @@ const PostgresDataSource = new DataSource({
   username: 'postgres',
   password: 'postgres',
   database: 'base',
-  entities: [join(`${__dirname}/**/models/**/*.entity.{ts,js}`)],
-  migrationsRun: true,
+  // entities: [join(`${__dirname}/models/**/*.entity.{ts,js}`)],
+  entities: [`${__dirname}/models/**/*.entity.{ts,js}`],
+
+  // migrationsRun: true,
   migrationsTransactionMode: 'each',
-  migrations: [join(`${__dirname}/**/migrations/*.{ts,js}`)],
+  migrations: [join(`${__dirname}/migrations/*.{ts,js}`)],
 });
 
 export { PostgresDataSource };
